@@ -1,0 +1,31 @@
+Source: ruby-fakefs
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Sebastian Boehm <sebastian@sometimesfood.org>,
+           Gunnar Wolf <gwolf@debian.org>,
+           Tobias Grimm <etobi@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               gem2deb (>= 1),
+               rake,
+               ruby-minitest,
+               ruby-rspec
+Standards-Version: 4.5.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-fakefs.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-fakefs
+Homepage: https://github.com/fakefs/fakefs
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-fakefs
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${misc:Depends},
+         ${ruby:Depends},
+         ${shlibs:Depends}
+Description: Fake file system to be used in unit tests
+ FakeFS allows you to unit-test file system calls without actually touching the
+ file system. File, Dir and FileUtils calls are redirected to a fake file system
+ without requiring to use any mocking library thus making it faster and easier
+ to test file system calls.
